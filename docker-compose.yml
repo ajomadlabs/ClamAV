@@ -1,0 +1,7 @@
+version: '3'
+services:
+  clamav-api:
+    build: .
+    ports:
+     - "9000:9000"
+ 
