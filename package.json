@@ -4,7 +4,8 @@
   "description": "Node.js clamav-api project",
   "main": "server.js",
   "scripts": {
-    "test": "test"
+    "test": "standard",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/ajomadlabs/ClamAV#readme",
   "devDependencies": {
+    "nodemon": "^1.18.3",
     "standard": "^11.0.1"
   },
   "dependencies": {
