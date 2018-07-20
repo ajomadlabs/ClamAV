@@ -1,0 +1,27 @@
+{
+  "name": "clamav-api",
+  "version": "1.0.0",
+  "description": "Node.js clamav-api project",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajomadlabs/ClamAV.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "API",
+    "ClamAV"
+  ],
+  "author": "Ajo John Mathai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajomadlabs/ClamAV/issues"
+  },
+  "homepage": "https://github.com/ajomadlabs/ClamAV#readme",
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
+}
