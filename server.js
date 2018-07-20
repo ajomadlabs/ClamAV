@@ -16,7 +16,7 @@ const port = process.env.PORT || 9000
 // Defining the middlewares
 
 app.use(morgan('dev'))
-app.use(bodyParser.json())
+app.use(bodyParser({uploadDir: './uploads'}))
 app.use(cors())
 
 // Listening to port
