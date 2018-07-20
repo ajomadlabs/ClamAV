@@ -10,7 +10,7 @@ const fileUpload = require('express-fileupload')
 const app = express()
 
 // Defining the port
-const port = process.env.PORT || 9000
+const port = process.env.PORT || 9100
 
 // Defining the middlewares
 app.use(morgan('dev'))
