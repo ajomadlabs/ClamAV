@@ -1,4 +1,6 @@
 const exec = require('child_process').exec
+const file = require('../config/config')
+const fs = require('fs')
 
 module.exports = (app) => {
   // Defining Scan Route
@@ -7,17 +9,18 @@ module.exports = (app) => {
       return res.status(400).send('Files not uploaded')
     } else {
       const uploadFile = req.files.uploadFile
-      uploadFile.mv('./uploads/scan.txt', (err) => {
+      uploadFile.mv(file.file, (err) => {
         if (err) {
           return res.status(500).send(err)
         } else {
-          exec('clamscan ./uploads/scan.txt', (error, stdout, stderr) => {
+          exec('clamscan' + ' ' + file.file, (error, stdout, stderr) => {
             const lines = stdout.toString().split('\n')[0].split(' ')[1]
-            if (lines === 'OK') {
+            const virus = stdout.toString().split('\n')[7].split(' ')[2]
+            if (lines === 'OK' && virus === 0) {
               res.send('No virus found')
-            } else {
-              res.send('Virus found')
+            } else if (virus > 0) {
               error = null
+              res.send('Virus found')
             }
           })
         }
